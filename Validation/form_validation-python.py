@@ -23,22 +23,16 @@ def username_validation(name):
 
 def email_validation(email):
     regex_email = '^.+\\@(\\[?)[a-zA-Z0-9\\-\\.]+\\.([a-zA-Z]{2,3}|[0-9]{1,3})(\\]?)$'
-    if re.match(regex_email, email):
-        return True
-    return False
+    return re.match(regex_email, email)
 
 
 def phone_validation(phone):
     regex_phone = '(\d{3})\D*(\d{3})\D*(\d{4})\D*(\d*)$'
-    if re.match(regex_phone, phone):
-        return True
-    return False
+    return re.match(regex_phone, phone)
     
 
 def password_validation(password, uname):
-    if len(password) > 5 and password != uname:
-        return True
-    return False
+    return len(password) > 5 and password != uname
 
 
 def conpassword_validation(conpass, res):
